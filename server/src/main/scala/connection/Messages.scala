@@ -1,0 +1,7 @@
+package connection
+
+object Messages extends Enumeration {
+
+  type MessagesEnum = Value
+  val MESSAGE, SUCCESS, REGISTER, AUTHORIZATION, REGISTER_ERROR, SYSTEM_ERROR, AUTHORIZATION_ERROR_NOT_VALID_PASSWORD, AUTHORIZATION_ERROR_PID_NOT_EXISTS = Value
+}

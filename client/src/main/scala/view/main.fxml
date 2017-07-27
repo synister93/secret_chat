@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="804.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <MenuBar fx:id="menuBar" prefHeight="15.0" prefWidth="785.0" BorderPane.alignment="CENTER">
+        <menus>
+          <Menu fx:id="fileMenu" mnemonicParsing="false" text="Файл">
+            <items>
+              <MenuItem fx:id="exitItemMenu" mnemonicParsing="false" text="Выход" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Контакты">
+            <items>
+                  <MenuItem fx:id="importMenuItem" mnemonicParsing="false" text="Импорт настроек...." />
+              <MenuItem mnemonicParsing="false" text="Добавить" />
+                  <MenuItem mnemonicParsing="false" text="Отправить сообщение..." />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Помощь">
+            <items>
+              <MenuItem mnemonicParsing="false" text="О программе" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Система">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Выйти" />
+                  <MenuItem mnemonicParsing="false" text="Сменить пользователя" />
+              </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <right>
+      <VBox prefHeight="434.0" prefWidth="318.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox prefHeight="29.0" prefWidth="290.0">
+               <children>
+                  <BorderPane prefHeight="29.0" prefWidth="331.0">
+                     <left>
+                        <TextField prefHeight="25.0" prefWidth="179.0" promptText="Поиск по списку контактов..." BorderPane.alignment="CENTER" />
+                     </left>
+                     <right>
+                        <Button fx:id="addNewContactButton" mnemonicParsing="false" text="Новый контакт..." BorderPane.alignment="CENTER" />
+                     </right>
+                  </BorderPane>
+               </children>
+            </HBox>
+            <ListView fx:id="contactsView" prefHeight="612.0" prefWidth="318.0" />
+         </children>
+      </VBox>
+   </right>
+   <left>
+      <VBox prefHeight="554.0" prefWidth="619.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox prefHeight="29.0" prefWidth="465.0">
+               <children>
+                  <BorderPane prefHeight="29.0" prefWidth="619.0">
+                     <right>
+                        <Button fx:id="removeMessagesButton" mnemonicParsing="false" text="Удалить чат" BorderPane.alignment="CENTER" />
+                     </right>
+                     <left>
+                        <TextField prefHeight="25.0" prefWidth="227.0" promptText="Поиск сообщения...." BorderPane.alignment="CENTER" />
+                     </left>
+                  </BorderPane>
+               </children>
+            </HBox>
+            <ListView fx:id="messagesView" prefHeight="612.0" prefWidth="619.0">
+               <contextMenu>
+                  <ContextMenu>
+                    <items>
+                      <MenuItem mnemonicParsing="false" text="Очистить" />
+                    </items>
+                  </ContextMenu>
+               </contextMenu></ListView>
+            <TextArea fx:id="newMessageArea" prefHeight="101.0" prefWidth="465.0" snapToPixel="false" />
+            <HBox prefHeight="39.0" prefWidth="465.0">
+               <children>
+                  <Button fx:id="sendButton" mnemonicParsing="false" text="Отправить" />
+                  <Button fx:id="smilesButton" mnemonicParsing="false" text=":-)" />
+                  <Button mnemonicParsing="false" text="Файл" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <SplitPane prefHeight="554.0" prefWidth="77.0" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>
